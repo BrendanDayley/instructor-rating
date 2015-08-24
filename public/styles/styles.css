@@ -1,0 +1,12 @@
+b {
+	font-weight: bold;
+	font-size: 1.25em;
+}
+b.focus {
+	font-size: 1.4em;
+	font-family: cursive;
+}
+.clickable {
+	cursor: pointer;
+	border: 1px ridge grey;
+}

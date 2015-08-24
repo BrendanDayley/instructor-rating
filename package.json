@@ -16,5 +16,11 @@
   "bugs": {
     "url": "https://github.com/BrendanDayley/instructor-rating/issues"
   },
-  "homepage": "https://github.com/BrendanDayley/instructor-rating#readme"
+  "homepage": "https://github.com/BrendanDayley/instructor-rating#readme",
+  "dependencies": {
+    "body-parser": "^1.13.3",
+    "cors": "^2.7.1",
+    "express": "^4.13.3",
+    "mongoose": "^4.1.3"
+  }
 }

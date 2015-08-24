@@ -1,0 +1,9 @@
+<div class='container'>
+	<h1>Hey there! {{test}}</h1>
+	<li ng-repeat="teacher in teachers" ui-sref='reviews({teacher: teacher.id})'>
+
+		<div class='clickable' ng-click='setTeacherId(university.id)'>
+			<b class='focus'>{{teacher.name}}</b>
+		</div>
+	</li>
+</div>
