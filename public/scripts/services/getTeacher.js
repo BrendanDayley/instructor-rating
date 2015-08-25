@@ -1,26 +1,35 @@
-app.service('universityService', function () {
+app.service('universityService', function ($http, $q) {
 
 	this.getUniversities = function () {
-
-		return [{
-			id: 'un1v3rs1ty',
-			name: 'Hogwarts',
-		}]
-
-	}
+		var defer = $q.defer();
+		var url = '/api/universities';
+		$http({
+			method: 'GET',
+			url: url,
+		}).then(function (res) {
+			console.log(res);
+			defer.resolve(res);
+		});
+		return defer.promise;
+	};
 
 })
 
 
-.service('teacherService', function () {
+.service('teacherService', function ($http, $q) {
 
 	this.getTeachers = function () {
-		return [{
-			name: 'Severus Snape',
-			schoolId: 'un1v3rs1ty',
-			id: 1,
-		}]
-	}
+		var defer = $q.defer();
+		var url = '/api/teachers';
+		$http({
+			method: 'GET',
+			url: url,
+		}).then(function (res) {
+			console.log(res);
+			defer.resolve(res);
+		});
+		return defer.promise;
+	};
 
 	this.getTeacherById = function (id) {
 		console.log(this.getTeachers());
@@ -31,21 +40,23 @@ app.service('universityService', function () {
 
 
 
-.service('reviewService', function () {
+.service('reviewService', function ($http, $q) {
 
 	this.getReviews = function () {
-		return [{
-			id: '1234321',
-			userId: 987654644,
-			rating: 1,
-			comment: 'What is snapes problem, he always has it out for me!',
-			classId: 394,
-		}]
-	}
-
+		var defer = $q.defer();
+		var url = '/api/reviews';
+		$http({
+			method: 'GET',
+			url: url,
+		}).then(function (res) {
+			console.log(res);
+			defer.resolve(res);
+		});
+		return defer.promise;
+	};
 })
 
-.service('classService', function () {
+.service('classService', function ($http, $q) {
 
 	this.getClasses = function () {
 		return [{

@@ -1,15 +1,23 @@
 app.controller('universityCtrl', function ($scope, universityService) {
-	$scope.test = 'hello'
-	$scope.universities = universityService.getUniversities();
-
+	$scope.universities;
+	var getUniversities = function () {
+		universityService.getUniversities().then(function (res) {
+			$scope.universities = res.data;
+		});
+	}()
 })
 
 
 
 .controller('getTeachersCtrl', function ($scope, teacherService, $stateParams) {
-	$scope.teachers = teacherService.getTeachers();
-	$scope.universityId = $stateParams.universityid;
-	console.log($scope.universityId);
+	$scope.teachers;
+	var getTeachers = function () {
+		teacherService.getTeachers().then(function (res) {
+			$scope.teachers = res.data;
+		});
+	}();
+	//	$scope.universityId = $stateParams.universityid;
+	//	console.log($scope.universityId);
 })
 
 
@@ -28,7 +36,15 @@ app.controller('universityCtrl', function ($scope, universityService) {
 })
 
 
-
 .controller('reviewCtrl', function ($scope, reviewService) {
-	$scope.reviews = reviewService.getReviews();
-});
+	$scope.reviews;
+	var getReviews = function () {
+		reviewService.getReviews().then(function (res) {
+			$scope.reviews = res.data;
+		});
+	}();
+})
+
+.controller('newUniversityCtrl', function ($scope, universityService) {
+	$scope.test = 'test';
+})

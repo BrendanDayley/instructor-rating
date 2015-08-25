@@ -24,5 +24,10 @@ app.config(function ($stateProvider, $urlRouterProvider) {
 		templateUrl: './views/reviews.html',
 		controller: 'reviewCtrl',
 	})
+	.state('createUniversity', {
+		url: '/new university',
+		templateUrl: './views/newUniversity.html',
+		controller: 'newUniversityCtrl'
+	})
 
 });
