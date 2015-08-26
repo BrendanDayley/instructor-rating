@@ -9,8 +9,18 @@ b.focus {
 .clickable {
 	cursor: pointer;
 	border: 1px ridge grey;
+	margin-bottom: 15px;
 }
 .nav {
 	border-bottom: 1px solid black;
 	display:
+}
+a {
+	text-decoration: none;
+	padding: 10px;
+	border: 1px solid black;
+	display: inline-block;
+	background-color: lightblue;
+	color: black;
+	margin: 10px;
 }

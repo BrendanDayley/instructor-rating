@@ -1,74 +1,97 @@
-//app.service('mainService', function ($q) {
-//
-//	this.getTeachers = function () {
-//		return [
-//
-//			{
-//				name: 'Severus Snape',
-//				avgRating: 3,
-//				numReviews: 394,
-//				id: 1,
-//				reviews: [
-//					{
-//						user: 'Harry Potter',
-//						rating: 2,
-//						comment: 'He seems to pick on griffindor students'
-//				},
-//			],
-//		},
-//			{
-//				name: 'VoldeMort',
-//				avgRating: 5,
-//				numReviews: 1,
-//				id: 2,
-//				reviews: [
-//					{
-//						user: 'Tom Riddle',
-//						rating: 5,
-//						comment: 'volde is the best he killed all the other classmates'
-//				},
-//			],
-//
-//		},
-//			{
-//				name: 'DumbleDore',
-//				avgRating: 4.5,
-//				numReviews: 1400,
-//				id: 3,
-//				reviews: [
-//					{
-//						user: 'Harry Potter',
-//						rating: 4,
-//						comment: 'Dumbledore is the best except for that one year he completly ignored me'
-//				},
-//					{
-//	user: 'Ron Weasley',
-//	rating: 5,
-//	comment: 'This professer got style!'
-//},
-//			]
-//		},
-//
-//	];
-//	}
-//	this.getTeacher = function (id) {
-//		return {
-//			name: 'DumbleDore',
-//			avgRating: 4.5,
-//			numReviews: 1400,
-//			id: 3,
-//			reviews: [
-//				{
-//					user: 'Harry Potter',
-//					rating: 4,
-//					comment: 'Dumbledore is the best except for that one year he completly ignored me'
-//				},
-//				{
-//					user: 'Ron Weasley',
-//					rating: 5,
-//					comment: 'This professer got style!'
-//				},
-//			]
-//		};
-//	}
-//});
+app.service('universityService', function ($http, $q) {
+
+	this.getUniversities = function () {
+		var defer = $q.defer();
+		var url = '/api/universities';
+		$http({
+			method: 'GET',
+			url: url,
+		}).then(function (res) {
+			defer.resolve(res);
+		});
+		return defer.promise;
+	};
+
+	this.addUniversities = function (newUniversity) {
+		var defer = $q.defer();
+		var url = '/api/universities';
+		$http({
+			method: 'POST',
+			url: url,
+			data: JSON.stringify(newUniversity),
+		}).then(function (res) {})
+	}
+
+})
+
+
+.service('teacherService', function ($http, $q) {
+
+	this.getTeachers = function () {
+		var defer = $q.defer();
+		var url = '/api/teachers';
+		$http({
+			method: 'GET',
+			url: url,
+		}).then(function (res) {
+			defer.resolve(res);
+		});
+		return defer.promise;
+	};
+
+	this.getTeacherById = function (id) {
+		var defer = $q.defer();
+		var url = '/api/teachers/' + id;
+		$http({
+			method: 'GET',
+			url: url,
+		}).then(function (res) {
+			defer.resolve(res);
+		});
+		return defer.promise;
+	}
+
+	this.addTeacher = function (teacher) {
+		var defer = $q.defer();
+		var url = '/api/teachers';
+		$http({
+			method: 'POST',
+			url: url,
+			data: JSON.stringify(teacher),
+		}).then(function (res) {
+			defer.resolve(res);
+		});
+		return defer.promise;
+	};
+})
+
+
+
+
+.service('reviewService', function ($http, $q) {
+
+	this.getReviews = function () {
+		var defer = $q.defer();
+		var url = '/api/reviews';
+		$http({
+			method: 'GET',
+			url: url,
+		}).then(function (res) {
+			defer.resolve(res);
+		});
+		return defer.promise;
+	};
+})
+
+.service('classService', function ($http, $q) {
+
+	this.getClasses = function () {
+		return [{
+			name: 'potions',
+			teacherId: 1,
+			classId: 394,
+			schoolId: "un1v3rs1ty",
+		}]
+	};
+
+})

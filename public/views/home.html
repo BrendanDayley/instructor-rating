@@ -1,12 +1,11 @@
 <div class="homeContainer">
-	<h1>Welcome to the Home HTML page </h1>
-	<ul>
-		<li ng-repeat="university in universities" ui-sref='teachers({university: university.id})'>
+	<h1>Welcome to Instructor Rating </h1>
 
-			<div class='clickable' ng-click='setUniversityId(university.id)'>
-				<b class='focus'>{{university.name}}</b>
-			</div>
-		</li>
+	<div class='listings' ng-repeat="university in universities" ui-sref='teachers({ university_id: university._id })'>
 
-	</ul>
+		<div class='clickable' ng-click='setUniversityId(university._id)'>
+			<b class='focus'>{{university.name}}</b>
+		</div>
+	</div>
+
 </div>

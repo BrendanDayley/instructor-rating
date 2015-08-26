@@ -1,3 +1,15 @@
 <div>
-	{{test}}
+	<form name='addUniversity' class='css-form' novalidate>
+		School Name:
+		<input type="text" ng-model='school.name' name='schoolName' required='' />
+		<br />
+		<div ng-show='form.$submitted || form.schoolName.$touched'>
+			<div ng-show="form.schoolName.$error.required">The Schools name is required.</div>
+		</div>
+
+		<input type="button" ng-click="reset(form)" value="Reset" />
+		<input type="button" ng-click="update(school)" value="Submit" />
+
+		<pre>form = {{school}}</pre>
+	</form>
 </div>

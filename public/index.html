@@ -12,17 +12,34 @@
 
 	<nav class="navbar navbar-inverse" role="navigation">
 		<div class="navbar-header">
-			<a class="navbar-brand" ui-sref="#">AngularUI Router</a>
+
 		</div>
-		<ul class="nav navbar-nav">
-			<li ui-sref="home">Universities</li>
-			<li ui-sref="createUniversity">Create University</li>
-		</ul>
+		<div class="nav navbar-nav">
+			<a class="navbar-brand" ui-sref="home">Home</a>
+			<span><a ui-sref="home">Universities</a></span>
+			<span> <a ui-sref="createUniversity">Create University</a></span>
+		</div>
 	</nav>
+
+
+
+
+
+
+
 
 	<div class="view">
 		<div ui-view></div>
 	</div>
+
+
+
+
+
+
+
+
+
 
 	<!-- EXTERNAL LIBRARIES -->
 	<script src="http://code.jquery.com/jquery-1.11.3.js"></script>
@@ -36,12 +53,11 @@
 	<script src="scripts/app.js"></script>
 
 	<!--		CONTROLLERS		-->
-	<script src="scripts/ctrls/homeCtrl.js"></script>
 	<script src="scripts/ctrls/mainCtrl.js"></script>
 	<script src=""></script>
 
 	<!--		SERVICES			-->
-	<script src="scripts/services/getTeacher.js"></script>
+	<script src="scripts/services/mainService.js"></script>
 	<script src=""></script>
 
 	<!--		DIRECTIVES		-->

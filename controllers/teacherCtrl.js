@@ -1,19 +1,22 @@
 var Teacher = require('../models/teacher');
 
 module.exports = {
-	create: function(req, res) {
+	create: function (req, res) {
 		var newTeacher = new Teacher(req.body);
-		newTeacher.save( function (err, result) {
-		if (err) return res.status(418).send(err);
-		else res.send(result);
-	});
+		newTeacher.save(function (err, result) {
+			if (err) return res.status(500).send(err);
+			else res.send(result);
+		});
 	},
-	read: function(req, res) {
-		Teacher.find(req.query)
+
+	read: function (req, res) {
+		console.log({
+			'university': +req.params
+		});
+		Teacher.find(req.params)
 			.exec(function (err, result) {
-				if(err) return res.status(418).send(err);
+				if (err) return res.status(500).send(err);
 				else res.send(result);
 			});
 	}
 }
-

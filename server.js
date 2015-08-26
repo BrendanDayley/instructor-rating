@@ -32,7 +32,7 @@ app.get('/api/universities', universityCtrl.read);
 app.post('/api/universities', universityCtrl.create);
 
 //	TEACHERS
-app.get('/api/teachers', teacherCtrl.read);
+app.get('/api/teachers/:university', teacherCtrl.read);
 app.post('/api/teachers', teacherCtrl.create);
 
 //	USERS
