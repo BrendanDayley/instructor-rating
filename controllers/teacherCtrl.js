@@ -10,9 +10,6 @@ module.exports = {
 	},
 
 	read: function (req, res) {
-		console.log({
-			'university': +req.params
-		});
 		Teacher.find(req.params)
 			.exec(function (err, result) {
 				if (err) return res.status(500).send(err);
