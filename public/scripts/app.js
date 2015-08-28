@@ -17,14 +17,15 @@ app.config(function ($stateProvider, $urlRouterProvider) {
 			url: '/university/:university_id',
 			templateUrl: 'views/teacher.html',
 			controller: 'getTeachersCtrl'
-		})
-		.state('teachers.newTeacher', {
-			templateUrl: 'views/newTeacher.html',
-			controller: 'newTeacherCtrl'
-		})
+	})
+		
+	.state('teachers.newTeacher', {
+		templateUrl: 'views/newTeacher.html',
+		controller: 'newTeacherCtrl'
+	})
 
 	.state('reviews', {
-		url: '/reviews',
+		url: '/reviews/:teacher_id',
 		templateUrl: 'views/reviews.html',
 		controller: 'reviewCtrl'
 	})

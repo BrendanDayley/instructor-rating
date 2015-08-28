@@ -9,7 +9,7 @@ module.exports = {
 		});
 	},
 	read: function (req, res){
-		Review.find(req.query)
+		Review.find(req.params)
 			.exec(function (err, result) {
 				if (err) return res.status(418).send(err);
 				else res.send(result);

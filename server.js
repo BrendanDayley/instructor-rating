@@ -34,13 +34,14 @@ app.post('/api/universities', universityCtrl.create);
 //	TEACHERS
 app.get('/api/teachers/:university', teacherCtrl.read);
 app.post('/api/teachers', teacherCtrl.create);
+app.get('/api/teachers/teacher_id/:teacher_id', teacherCtrl.read2);
 
 //	USERS
 app.get('/api/users', userCtrl.read);
 app.post('/api/users', userCtrl.create);
 
 //	REVIEWS
-app.get('/api/reviews', reviewCtrl.read);
+app.get('/api/reviews/:teacherId', reviewCtrl.read);
 app.post('/api/reviews', reviewCtrl.create);
 
 //===================================================================

@@ -11,7 +11,7 @@ var reviewSchema = new Schema({
 		type: String,
 		require: false,
 	} ,
-	classId: {type: Schema.Types.ObjectId, ref: 'Class'},
+	teacherId: {type: Schema.Types.ObjectId, ref: 'Teacher'},
 });
 
 module.exports = mongoose.model ('Review', reviewSchema);

@@ -1,11 +1,17 @@
 <div class="homeContainer">
-	<h1>Welcome to Instructor Rating </h1>
-
-	<div class='listings' ng-repeat="university in universities" ui-sref='teachers({ university_id: university._id })'>
-
-		<div class='clickable' ng-click='setUniversityId(university._id)'>
-			<b class='focus'>{{university.name}}</b>
-		</div>
+	<h1 class="center">Welcome to Instructor Rating </h1>
+	<div class="right">
+		<h2 class="third">Don't see your School?</h2>
+		<a class="third button" ui-sref="createUniversity">New School</a>
 	</div>
 
+	<div class='listings' ng-repeat="university in universities" ng-switch on="($index % 2)" ui-sref='teachers({ university_id: university._id })'>
+
+		<div ng-switch-when='0' class='clickable focus '>
+			<b class='capitalize'>{{university.name}}</b>
+		</div>
+		<div ng-switch-when='1' class='clickable focus2 '>
+			<b class='capitalize'>{{university.name}}</b>
+		</div>
+	</div>
 </div>

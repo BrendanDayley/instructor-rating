@@ -10,7 +10,15 @@ module.exports = {
 	},
 
 	read: function (req, res) {
+		console.log(req.query);
 		Teacher.find(req.params)
+			.exec(function (err, result) {
+				if (err) return res.status(500).send(err);
+				else res.send(result);
+			});
+	},
+	read2: function (req, res) {
+		Teacher.find({ "_id": req.params.teacher_id })
 			.exec(function (err, result) {
 				if (err) return res.status(500).send(err);
 				else res.send(result);

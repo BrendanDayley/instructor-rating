@@ -1,15 +1,20 @@
 <div class='container'>
-	<h1>Hey there!</h1>
-	<h2>Don't see your teacher?</h2>
-
-	<a ui-sref="teachers.newTeacher">Create Teacher</a>
+	<div class="right">
+		<h2 class="third">Don't see your teacher?</h2>
+		<a class="button third" ui-sref="teachers.newTeacher">Create Teacher</a>
+	</div>
 	<div ui-view></div>
 	<hr />
 
-	<li ng-repeat="teacher in teachers" ui-sref='reviews({teacher: teacher.id})'>
-
-		<div class='clickable' ng-click='setTeacherId(university.id)'>
-			<b class='focus'>{{teacher.name}}</b>
+	<div ng-repeat="teacher in teachers" ng-switch on="($index % 2)" ui-sref='reviews({teacher_id: teacher._id})'>
+		<div ng-switch-when='0' class='teachers '>
+			<div class='b capitalize teacher focus'>{{teacher.name}}</div>
+			<div class='focus2 rate'>Rate Me!</div>
 		</div>
-	</li>
+
+		<div ng-switch-when='1' class='teachers '>
+			<div class='b capitalize teacher focus2'>{{teacher.name}}</div>
+			<div class='focus rate'>Rate Me!</div>
+		</div>
+	</div>
 </div>

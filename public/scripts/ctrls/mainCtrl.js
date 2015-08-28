@@ -15,7 +15,6 @@ app.controller('universityCtrl', function ($scope, universityService, teacherSer
 .controller('getTeachersCtrl', function ($scope, teacherService, $stateParams) {
 	$scope.teachers;
 	$scope.universityId = $stateParams.university_id;
-	console.log('U-ID', $scope.universityId);
 	var getTeachers = function () {
 		teacherService.getTeacherById($scope.universityId).then(function (res) {
 			$scope.teachers = res.data;
@@ -29,10 +28,16 @@ app.controller('universityCtrl', function ($scope, universityService, teacherSer
 })
 
 
-.controller('reviewCtrl', function ($scope, reviewService) {
-	$scope.reviews;
+.controller('reviewCtrl', function ($scope, reviewService, $stateParams, teacherService) {
+	$scope.reviews
+	$scope.teacherId = $stateParams.teacher_id;
+	console.log($scope.teacherId);
+	$scope.teacher;
+	teacherService.getTeacher($scope.teacherId).then(function (res) {
+		$scope.teacher = res.data[0];
+	});
 	var getReviews = function () {
-		reviewService.getReviews().then(function (res) {
+		reviewService.getReviews($scope.teacherId).then(function (res) {
 			$scope.reviews = res.data;
 		});
 	}();
