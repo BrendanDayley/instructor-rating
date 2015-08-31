@@ -14,11 +14,11 @@ app.config(function ($stateProvider, $urlRouterProvider) {
 	})
 
 	.state('teachers', {
-			url: '/university/:university_id',
-			templateUrl: 'views/teacher.html',
-			controller: 'getTeachersCtrl'
+		url: '/university/:university_id',
+		templateUrl: 'views/teacher.html',
+		controller: 'getTeachersCtrl'
 	})
-		
+
 	.state('teachers.newTeacher', {
 		templateUrl: 'views/newTeacher.html',
 		controller: 'newTeacherCtrl'
@@ -36,6 +36,11 @@ app.config(function ($stateProvider, $urlRouterProvider) {
 		controller: 'newUniversityCtrl'
 	})
 
+	.state('newReview', {
+		url: '/newReview/:teacher_id',
+		templateUrl: 'views/newReview.html',
+		controller: 'newReviewCtrl'
+	})
 
 
 });

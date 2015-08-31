@@ -23,8 +23,7 @@ app.controller('universityCtrl', function ($scope, universityService, teacherSer
 })
 
 
-.controller('classCtrl', function ($scope, reviewService) {
-})
+.controller('classCtrl', function ($scope, reviewService) {})
 
 
 .controller('reviewCtrl', function ($scope, reviewService, $stateParams, teacherService) {
@@ -66,12 +65,6 @@ app.controller('universityCtrl', function ($scope, universityService, teacherSer
 	$scope.reset();
 })
 
-
-
-
-
-
-
 .controller('newTeacherCtrl', function ($scope, teacherService, $stateParams, $state) {
 
 	var universityId = $stateParams.university_id;
@@ -84,6 +77,20 @@ app.controller('universityCtrl', function ($scope, universityService, teacherSer
 		teacher.university = universityId
 		console.log(teacher);
 		teacherService.addTeacher(teacher).then(function (res) {
+			$state.go($state.current, {}, {
+				reload: true
+			});
+		});
+	}
+})
+
+.controller('newReviewCtrl', function ($scope, reviewService, $stateParams, $state) {
+	console.log('new review ctrl says hello');
+	$scope.teacherId = $stateParams.teacher_id;
+	$scope.update = function (review) {
+		review.teacherId = $scope.teacherId;
+		console.log(review);
+		reviewService.addReview(review).then(function (res) {
 			$state.go($state.current, {}, {
 				reload: true
 			});

@@ -12,15 +12,15 @@
 	<div ui-view></div>
 	<hr />
 
-	<div ng-repeat="teacher in teachers" ng-switch on="($index % 2)" ui-sref='reviews({teacher_id: teacher._id})'>
+	<div ng-repeat="teacher in teachers" ng-switch on="($index % 2)">
 		<div ng-switch-when='0' class='teachers '>
-			<div class='b capitalize teacher focus'>{{teacher.name}}</div>
-			<div class='focus2 rate'>Rate Me!</div>
+			<div class='b capitalize teacher focus' ui-sref='reviews({teacher_id: teacher._id})'>{{teacher.name}}</div>
+			<div class='focus2 rate' ui-sref='newReview({teacher_id: teacher._id})'>Rate Me!</div>
 		</div>
 
 		<div ng-switch-when='1' class='teachers '>
-			<div class='b capitalize teacher focus2'>{{teacher.name}}</div>
-			<div class='focus rate'>Rate Me!</div>
+			<div class='b capitalize teacher focus2' ui-sref='reviews({teacher_id: teacher._id})'>{{teacher.name}}</div>
+			<div class='focus rate' ui-sref='newReview({teacher_id: teacher._id})'>Rate Me!</div>
 		</div>
 	</div>
 </div>

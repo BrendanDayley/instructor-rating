@@ -89,6 +89,18 @@ app.service('universityService', function ($http, $q) {
 			});
 			return defer.promise;
 		};
+		this.addReview = function (review) {
+			var defer = $q.defer();
+			var url = '/api/reviews';
+			$http({
+				method: 'POST',
+				url: url,
+				data: JSON.stringify(review),
+			}).then(function (res) {
+				defer.resolve(res);
+			});
+			return defer.promise;
+		};
 	})
 
 
