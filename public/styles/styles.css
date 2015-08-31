@@ -7,26 +7,21 @@
 }
 .clickable {
 	cursor: pointer;
-	border: 1px ridge grey;
-	margin-bottom: 15px;
 	text-align: center;
 	width: 100%;
-	padding 0px;
+	padding: 0px;
+	margin-bottom: 1px;
 }
 .nav {
 	border-bottom: 1px solid black;
-	padding: 15px;
-	padding-bottom: 25px;
+	margin: 10px;
+	height: 80px;
 }
 li {
 	text-decoration: none;
 }
 .capitalize {
 	text-transform: capitalize;
-}
-.right {
-	padding: 25px;
-	margin: 5px 0;
 }
 .third {
 	display: inline;
@@ -101,4 +96,22 @@ li {
 	display: flex;
 	align-content: flex-start;
 	text-align: center;
+}
+.space {
+	padding: 10px;
+	font-family: Arial;
+	font-size 18px;
+	border: 1px ridge grey;
+	border-radius: 28px;
+	width: 325px;
+	float: left;
+}
+.split {
+	display: inline;
+	margin: 20px;
+}
+.right {
+	display: inline;
+	float: right;
+	margin: 20px 0;
 }

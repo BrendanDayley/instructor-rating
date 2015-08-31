@@ -1,7 +1,13 @@
 <div class='container'>
-	<div class="right">
-		<h2 class="third">Don't see your teacher?</h2>
-		<a class="button third" ui-sref="teachers.newTeacher">Create Teacher</a>
+	<div class="nav">
+		<div class="right">
+			<h2 class="split">Don't see your teacher?</h2>
+			<a class="button split" ui-sref="teachers.newTeacher">Create Teacher</a>
+		</div>
+		<div class="space split">
+			Search teachers:
+			<input type='text' ng-model="search.name" />
+		</div>
 	</div>
 	<div ui-view></div>
 	<hr />

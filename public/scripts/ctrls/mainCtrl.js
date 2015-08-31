@@ -24,7 +24,6 @@ app.controller('universityCtrl', function ($scope, universityService, teacherSer
 
 
 .controller('classCtrl', function ($scope, reviewService) {
-
 })
 
 
